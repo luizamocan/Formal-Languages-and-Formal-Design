@@ -1,0 +1,28 @@
+list wardrobe
+open wardrobe
+
+add wardrobe piece(type "shirt", color "white", season "summer", occasion "office", price 70)
+add wardrobe piece(type "trousers", color "black", season "summer", occasion "office", price 120)
+add wardrobe piece(type "blazer", color "blue", season "autumn", occasion "office", price 200)
+add wardrobe piece(type "skirt", color "black", season "summer", occasion "office", price 90)
+add wardrobe piece(type "dress", color "red", season "autumn", occasion "office", price 180)
+
+budget = 250
+
+officeLooks = pick wardrobe where occasion is "office"
+notBlack = pick officeLooks where color is not "black"
+affordable = pick notBlack where price <= budget
+
+sort affordable by price desc
+
+when count(affordable) > 0
+	show "Office clothes available:"
+	
+	for each item in affordable
+		show item.type
+		show item.color
+		show item.price
+	end
+otherwise
+	show "No suitable office clothes found"
+end

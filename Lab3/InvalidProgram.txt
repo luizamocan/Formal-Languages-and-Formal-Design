@@ -1,0 +1,3 @@
+list closet
+budget = @200
+show "hello

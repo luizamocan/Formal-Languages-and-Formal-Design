@@ -1,0 +1,38 @@
+list closet
+open closet
+
+add closet piece(type "dress", color "pink", season "summer", occasion "party", price 150)
+add closet piece(type "skirt", color "black", season "summer", occasion "casual", price 100)
+add closet piece(type "blouse", color "white", season "summer", occasion "party", price 80)
+add closet piece(type "jacket", color "blue", season "autumn", occasion "office", price 180)
+add closet piece(type "trousers", color "black", season "summer", occasion "office", price 120)
+add closet piece(type "dress", color "red", season "summer", occasion "party", price 220)
+add closet piece(type "shirt", color "white", season "summer", occasion "casual", price 60)
+
+budget = 200
+budget = budget + 50
+
+summerLooks = pick closet where season is "summer"
+partyLooks = pick summerLooks where occasion is "party"
+affordableLooks = pick partyLooks where price <=budget
+
+sort affordableLooks by price asc
+
+when count(affordableLooks) > 0
+	show "Available party outfits:"
+	
+	total = 0
+	
+	for each look in affordableLooks
+		show look.type
+		show look.color
+		show look.price
+		total = total + look.price
+	end
+
+	show "Total price:"
+	show total
+otherwise
+	show "No suitable outfits were found"
+end
+

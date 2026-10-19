@@ -1,0 +1,2 @@
+Line 2: invalid character '@'
+Line 3: unterminated string constant

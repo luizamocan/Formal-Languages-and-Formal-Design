@@ -1,0 +1,5 @@
+Position | Kind | Value
+----------------------------------------
+0 | IDENTIFIER | closet
+1 | IDENTIFIER | budget
+2 | NUMBER | 200
