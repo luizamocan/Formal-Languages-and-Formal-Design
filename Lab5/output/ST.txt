@@ -1,0 +1,38 @@
+Position | Kind | Value
+----------------------------------------
+0 | IDENTIFIER | closet
+1 | STRING | "dress"
+2 | STRING | "pink"
+3 | STRING | "summer"
+4 | STRING | "party"
+5 | NUMBER | 150
+6 | STRING | "skirt"
+7 | STRING | "black"
+8 | STRING | "casual"
+9 | NUMBER | 100
+10 | STRING | "blouse"
+11 | STRING | "white"
+12 | NUMBER | 80
+13 | STRING | "jacket"
+14 | STRING | "blue"
+15 | STRING | "autumn"
+16 | STRING | "office"
+17 | NUMBER | 180
+18 | STRING | "trousers"
+19 | NUMBER | 120
+20 | STRING | "red"
+21 | NUMBER | 220
+22 | STRING | "shirt"
+23 | NUMBER | 60
+24 | IDENTIFIER | budget
+25 | NUMBER | 200
+26 | NUMBER | 50
+27 | IDENTIFIER | summerLooks
+28 | IDENTIFIER | partyLooks
+29 | IDENTIFIER | affordableLooks
+30 | NUMBER | 0
+31 | STRING | "Available party outfits:"
+32 | IDENTIFIER | total
+33 | IDENTIFIER | look
+34 | STRING | "Total price:"
+35 | STRING | "No suitable outfits were found"

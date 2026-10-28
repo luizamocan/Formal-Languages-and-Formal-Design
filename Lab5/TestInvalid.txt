@@ -1,0 +1,4 @@
+list closet
+budget = 012
+price = 12.
+item = "pink@dress"
