@@ -1,0 +1,37 @@
+list testWardrobe
+open testWardrobe
+
+add testWardrobe piece(type "shirt", color "white", season "summer", occasion "casual", price 100)
+add testWardrobe piece(type "pants", color "black", season "winter", occasion "office", price 150)
+
+discount = 100 - 20
+total = 10 + 5 * 2
+average = (100 + 50) / 2
+negative = -10
+
+summerItems = pick testWardrobe where season is "summer" and color is not "black"
+
+officeItems = pick testWardrobe where (occasion is "office" or occasion is "formal") and price <= 200
+
+remaining = count(testWardrobe) - 1
+ratio = count(testWardrobe) / 2
+
+sort testWardrobe by price asc
+sort testWardrobe by price desc
+
+show testWardrobe.price
+show count(testWardrobe)
+
+when count(testWardrobe) > 0
+    show "Wardrobe is not empty"
+end
+
+when count(testWardrobe) > 5
+    show "Many items"
+otherwise
+    show "Few items"
+end
+
+for each item in testWardrobe
+    show item.color
+end

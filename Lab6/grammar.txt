@@ -1,0 +1,88 @@
+<program> ::= <statement> | <statement> <program>
+
+<statement> ::= <declare> | <open> | <add> | <assign> | <sort> | <show> | <when> | <for>
+
+<declare> ::= "list" <id>
+
+<open> ::= "open" <id>
+
+<add> ::= "add" <id> <piece>
+
+<piece> ::= "piece" "(" <piece_fields> ")"
+
+<piece_fields> ::= "type" <string> "," "color" <string> "," "season" <string> "," "occasion" <string> "," "price" <number>
+
+<assign> ::= <id> "=" <expression>
+
+<expression> ::= <pick> | <arith>
+
+<pick> ::= "pick" <id> "where" <condition>
+
+<sort> ::= "sort" <id> "by" <field> <order>
+
+<show> ::= "show" <expression> | "show" <string>
+
+<when> ::= "when" <condition> <statements> "end"
+         | "when" <condition> <statements> "otherwise" <statements> "end"
+
+<for> ::= "for" "each" <id> "in" <id> <statements> "end"
+
+<statements> ::= <statement> | <statement> <statements>
+
+<condition> ::= <and_cond> | <condition> "or" <and_cond>
+
+<and_cond> ::= <comparison> | <and_cond> "and" <comparison>
+
+<comparison> ::= <value> <comp_op> <value>
+               | "(" <condition> ")"
+
+<value> ::= <string> | <number> | <id> | <field> | <field_access> | <count_call>
+
+<arith> ::= <term> | <arith> "+" <term> | <arith> "-" <term>
+
+<term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor>
+
+<factor> ::= <operand> | "-" <factor> | "(" <arith> ")"
+
+<operand> ::= <number> | <id> | <field_access> | <count_call>
+
+<field_access> ::= <id> "." <field>
+
+<count_call> ::= "count" "(" <id> ")"
+
+<field> ::= "type" | "color" | "season" | "occasion" | "price"
+
+<id> ::= <identifier>
+
+<identifier> ::= <letter> | <letter> <ident_rest>
+
+<ident_rest> ::= <ident_char> | <ident_char> <ident_rest>
+
+<ident_char> ::= <letter> | <digit> | "_"
+
+<keyword> ::= "list" | "open" | "add" | "piece" | "type" | "color" | "season" | "occasion" | "price"
+            | "pick" | "where" | "sort" | "show" | "when" | "otherwise" | "for" | "each" | "in"
+            | "end" | "and" | "or" | "is" | "not" | "count" | "asc" | "desc"
+
+<comp_op> ::= "is" | "is" "not" | "<" | "<=" | ">" | ">="
+
+<order> ::= "asc" | "desc"
+
+<string> ::= '"' '"' | '"' <string_content> '"'
+
+<string_content> ::= <string_char> | <string_char> <string_content>
+
+<string_char> ::= <letter> | <digit> | " " | "." | "," | ":" | ";" | "!" | "?" | "-" | "_" | "'" | "(" | ")" | "/" | "&"
+
+<number> ::= <integer> | <integer> "." <digits>
+
+<integer> ::= "0" | <nonzero_digit> | <nonzero_digit> <digits>
+
+<digits> ::= <digit> | <digit> <digits>
+
+<nonzero_digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+<letter> ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+           | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
